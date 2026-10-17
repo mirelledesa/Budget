@@ -58,7 +58,7 @@ Feature: Web service configuration
 ```
 
 ### US-03 Informative modal (P1)
-As a client, I want to open an info modal (ⓘ) next to pages and languages, so that I understand how much each extra costs.
+As a client, I want to open an info modal next to pages and languages, so that I understand how much each extra costs.
 
 ```gherkin
 Feature: Info modal
@@ -72,16 +72,6 @@ Feature: Info modal
     When I press the Escape key
     Then the modal is closed and the focus returns to the info icon
 ```
-
-### US-04 Currency display (P1)
-As a client, I want to see the € symbol next to every price, so that the amounts are clear.
-
-```gherkin
-Feature: Currency display
-  Scenario: Prices show the euro symbol
-    Then every service price, the estimated total and each history total are displayed followed by "€"
-```
-
 ---
 
 ## Epic 2: Budget Generation (Level 1)
@@ -205,22 +195,4 @@ Feature: Budget detail
     Given I open a valid budget URL
     Then I see the date, client details, selected services, itemized costs and total
 ```
-
 ---
-
-## Technical and quality tasks
-
-| ID | Task |
-|----|------|
-| T-01 | Project setup: Vite + React + TypeScript + Tailwind |
-| T-02 | Folder structure and path aliases |
-| T-03 | Define types and `services.json` / text JSON (SDD) |
-| T-04 | Configure Vitest + Gherkin scenarios |
-| T-05 | Router setup (`/` and `/budget/:id`) |
-| T-06 | Reusable `formatCurrency` util and constants (no magic numbers) |
-| T-07 | Error handling in storage service and error boundary |
-| T-08 | Accessibility audit (keyboard, ARIA, contrast, focus) |
-| T-09 | Minimal UX/UI improvements required by the criteria (info modal, empty states, success feedback, new detail view) |
-| T-10 | README with preview, installation and usage guide |
-| T-11 | Deploy to Netlify / Vercel / GitHub Pages |
-| T-12 | Demo preparation (narrative, screens, technical vocabulary) |
