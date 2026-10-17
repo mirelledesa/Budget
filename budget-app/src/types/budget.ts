@@ -11,11 +11,11 @@ export interface WebConfig{
     languages: number;
 }
 export interface ServicesConfig{
-    services = Service[];
-    webConfig = {
-        constPerUnit: number;
-        minPages: number;
-        minlanguage: number;
+    services: Service[];
+    webConfig: {
+    costPerUnit: number;
+    minPages: number;
+    minLanguages: number;
     };
 }
 export interface ClientData{
