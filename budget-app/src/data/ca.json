@@ -1,0 +1,11 @@
+{
+  "header": { "brand": "Frontender.itacademy" },
+  "hero": { "title": "Aconsegueix la millor qualitat" },
+  "services": { "add": "Afegir" },
+  "web": {
+    "pagesLabel": "Número de pàgines:",
+    "languagesLabel": "Número de llenguatges:"
+  },
+  "stepper": { "decrease": "Reduir", "increase": "Augmentar" },
+  "total": { "label": "Preu pressupostat:", "currencyName": "euros" }
+}
