@@ -1,3 +1,4 @@
+import {WEB_SERVICE_ID} from '../constants/money';
 import type { ServiceId, ServicesConfig, WebConfig } from '../types/budget';
 
 const WEB_SERVICE_ID: ServiceId = 'web';

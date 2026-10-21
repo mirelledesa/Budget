@@ -1,10 +1,11 @@
 export type ServiceId = 'seo' | 'ads' | 'web' ;
+export type StepDirection = 1 | -1 ;
 export interface Service {
     id: ServiceId;
     name: string;
     description: string;
     price: number;
-    configurable: boolean; 
+    configurable?: boolean; 
 } 
 export interface WebConfig{
     pages: number;
