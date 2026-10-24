@@ -2,7 +2,7 @@ import { CURRENCY_SYMBOL } from "../constants/money";
 import texts from '../data/ca.json'
 
 type PriceSize = 'md' | 'lg' ;
-const AMOUNT_SIZE_CLASS: Record<priceSize, string> = {
+const AMOUNT_SIZE_CLASS: Record<PriceSize, string> = {
     md: 'text-3xl',
     lg: 'text-4xl',
 };

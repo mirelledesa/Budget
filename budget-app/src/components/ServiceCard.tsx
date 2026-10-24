@@ -9,7 +9,7 @@ interface ServiceCardProps {
     onToggle: (serviceId: ServiceId) => void;
     children?: ReactNode;
 }
-export const ServiceCard = ({ service, isSelected, onToggle, children }: serviceCardProps) => (
+export const ServiceCard = ({ service, isSelected, onToggle, children }: ServiceCardProps) => (
     <article
     className={`rounded-2xl border-2 bg-white p-5 shadow-md transition-colors ${isSelected ? 'border-brand' : 'border-transparent' 
     }`}
@@ -19,7 +19,7 @@ export const ServiceCard = ({ service, isSelected, onToggle, children }: service
         <h2 className="text-lg font-bold">{service.name}</h2>
         <p className="text-xs font-semibold">{service.description}</p>
         </div>
-        <Price amount ={service.prices} />
+        <Price amount={service.price} />
         <label className="flex cursor-pointer items-center gap-2 text-xs font-semibold">
           <input
             type="checkbox"
