@@ -5,6 +5,7 @@ import type { ServicesConfig, WebConfig } from '../types/budget';
 
 const config = servicesData as ServicesConfig;
 const DEFAULT_WEB_CONFIG: WebConfig = { pages: 1, languages: 1 };
+
 describe('Feature: Service selection', () => {
     it ('Scenario: no seleted -> total is 0', () => {
         expect(calculateTotal([], DEFAULT_WEB_CONFIG, config)).toBe(0);
