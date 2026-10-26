@@ -1,3 +1,4 @@
-const App = () => <h1>Budget</h1>;
+import { BudgetPage } from "./page/budgetPage";
+const App = () => <BudgetPage />;
 
 export default App;

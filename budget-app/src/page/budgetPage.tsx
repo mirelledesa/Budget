@@ -21,7 +21,7 @@ export const BudgetPage = () => {
         <main>
         <section 
             aria-labelledby="hero-title"
-            className="rounded-3xl bg-stone-100 px-6 py-14 text-center md:py-20">
+            className="rounded-3xl bg-stone-100 bg-[url('/banner.svg')] bg-cover bg-center px-6 py-14 text-center md:py-20">
             
             <h1 id="hero-title" className="text-3xl font-extrabold md:text-4xl">
             {texts.hero.title}
