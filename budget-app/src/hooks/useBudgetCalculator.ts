@@ -49,10 +49,12 @@ export const useBudgetCalculator = () => {
   return {
     services: config.services,
     minValues: MIN_WEB_VALUES,
+    costPerUnit: config.webConfig.costPerUnit,
     selectedServices,
     webConfig,
     total,
     toggleService,
     changeWebConfig,
   };
+
 };

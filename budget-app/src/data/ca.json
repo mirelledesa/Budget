@@ -4,7 +4,20 @@
   "services": { "add": "Afegir" },
   "web": {
     "pagesLabel": "Número de pàgines:",
-    "languagesLabel": "Número de llenguatges:"
+    "languagesLabel": "Número de llenguatges:",
+    "infoButton": "Més informació sobre",
+    "info": {
+      "pages": {
+        "title": "Número de pàgines",
+        "description": "Afegeix les pàgines que tindrà el teu projecte.",
+        "costLabel": "El cost de cada pàgina és de"
+      },
+      "languages": {
+        "title": "Número de llenguatges",
+        "description": "Afegeix els llenguatges que tindrà el teu projecte.",
+        "costLabel": "El cost de cada llenguatge és de"
+      }
+    }
   },
   "stepper": { "decrease": "Reduir", "increase": "Augmentar" },
   "total": { "label": "Preu pressupostat:", "currencyName": "euros" }
