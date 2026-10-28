@@ -1,19 +1,32 @@
+import { useState } from "react";
+import { InfoModal } from "../components/InfoModal";
 import { Price } from "../components/Price";
 import { ServiceCard } from "../components/ServiceCard";
 import { Stepper } from "../components/Stepper";
+import { CURRENCY_SYMBOL } from "../constants/money";
 import texts from "../data/ca.json";
 import { useBudgetCalculator } from "../hooks/useBudgetCalculator";
+import type { webConfig } from "../types/budget";
 
 export const BudgetPage = () => {
   const {
     services,
     minValues,
+    costPerUnit,
     selectedServices,
     webConfig,
     total,
     toggleService,
     changeWebConfig,
   } = useBudgetCalculator();
+
+  const [openInfo, setOpenInfo] = useState<keyof webConfig | null>(null);
+  const modalTexts = openInfo ? texts.web[openInfo] : null;
+
+  const buildInfo = (field: keyof webConfig) => ({
+    label: `${texts.web.infoButton} ${texts.web.info[field].title}`,
+    onOpen: () => setOpenInfo(field),
+  });
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16">
       <header className="py-6 text-sm font-bold">{texts.header.brand}</header>
@@ -61,12 +74,18 @@ export const BudgetPage = () => {
         </ul>
         <div
           role="status"
-          className="mt-8 flex items-baseline justify-end gap-6"
-        >
+          className="mt-8 flex items-baseline justify-end gap-6">
           <span className="text-lg font-bold">{texts.total.label}</span>
           <Price amount={total} size="lg" />
         </div>
       </main>
+
+      {ModalTexts && (
+        infoModal title ={modalTexts.title} onClose={() => setOpenInfo(null)}>
+        <p>{modalText.description}</p>
+        <p>
+          {modalTexts.cost} {CURRENCY_SYMBOL}
+        </p>
     </div>
   );
 };
