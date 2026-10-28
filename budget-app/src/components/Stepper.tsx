@@ -1,12 +1,18 @@
 import { useId } from 'react';
 import texts from '../data/ca.json';
 import type { StepDirection } from '../types/budget';
+import { InfoIcon } from './InfoIcon';
 
+interface StepperInfo{
+    label: string;
+    onOpen : () => void;
+}
 interface StepperProps {
     label: string;
     value: number;
     min: number;
     onChange: (direction: StepDirection) => void;
+    info?: StepperInfo;
 }
 const BUTTON_CLASS =
  'relative flex h-4 w-4 items-center justify-center rounded-full border border-gray-300 text-[10px] text-gray-600 ' +
@@ -14,10 +20,24 @@ const BUTTON_CLASS =
   'hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-strong ' +
   'disabled:cursor-not-allowed disabled:opacity-40';
 
-export const Stepper = ({ label, value, min, onChange }: StepperProps) => {
+const INFO_BUTTON_CLASS = 
+'flex h-6 w-6 items-center justify-center rounded-full text-gray-500 hover:text-gray-500 hover:text-gray-800' +
+'focus outline-none focus-visible:ring-2 focus-visible:ring-brand-strong';
+
+export const Stepper = ({ label, value, min, onChange, info }: StepperProps) => {
     const labelId = useId();
     return (
         <div className="flex items-center justify-end gap-2 text-xs font-semibold">
+           {info && (
+            <button
+            type="button"
+            className={INFO_BUTTON_CLASS}
+            aria-label={info.label}
+            onClick={info.onOpen}
+            >
+                <InfoIcon />
+            </button>
+
             <span id={labelId}>{label}</span>
             <button
                 type="button"
@@ -46,3 +66,6 @@ export const Stepper = ({ label, value, min, onChange }: StepperProps) => {
             </div>
             );  
 };
+
+
+kjkk
