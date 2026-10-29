@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { QUANTITY_STEP } from "../constants/money";
 import servicesData from "../data/services.json";
 import type {
+  Budget,
+  ClientData,
   ServiceId,
   ServicesConfig,
   StepDirection,
@@ -10,6 +12,7 @@ import type {
 import { calculateTotal } from "../utils/calculateTotal";
 
 const config = servicesData as ServicesConfig;
+import { createBudget } from '../utils/createBudget';
 
 const MIN_WEB_VALUES: WebConfig = {
   pages: config.webConfig.minPages,
