@@ -20,5 +20,21 @@
     }
   },
   "stepper": { "decrease": "Reduir", "increase": "Augmentar" },
-  "total": { "label": "Preu pressupostat:", "currencyName": "euros" }
+  "total": { "label": "Preu pressupostat:", "currencyName": "euros" },
+  "form": {
+    "title": "Demanar pressupost",
+    "fields": {
+      "fullName": { "label": "Nom", "placeholder": "Nom" },
+      "phone": { "label": "Telèfon", "placeholder": "Telèfon" },
+      "email": { "label": "Email", "placeholder": "Email" }
+    },
+    "submit": "Sol·licitar pressupost",
+    "errors": {
+      "fullName": "Escriu el teu nom complet (mínim 2 lletres).",
+      "phone": "Escriu un telèfon vàlid, per exemple 666 666 666.",
+      "email": "Escriu un email vàlid, per exemple nom@domini.com.",
+      "services": "Selecciona almenys un servei abans de sol·licitar el pressupost."
+    },
+    "success": "Sol·licitud enviada! Hem rebut les teves dades."
+  }
 }
