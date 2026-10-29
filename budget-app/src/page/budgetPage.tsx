@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ClientForm } from '../components/ClientForm';
 import { InfoModal } from '../components/InfoModal';
 import { Price } from '../components/Price';
 import { ServiceCard } from '../components/ServiceCard';
@@ -76,6 +77,10 @@ export const BudgetPage = () => {
         <div role="status" className="mt-8 flex items-baseline justify-end gap-6">
           <span className="text-lg font-bold">{texts.total.label}</span>
           <Price amount={total} size="lg" />
+        </div>
+
+        <div className="mt-10">
+          <ClientForm hasSelectedServices={selectedServices.length > 0} />
         </div>
       </main>
 
