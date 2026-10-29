@@ -4,7 +4,7 @@ import type { ClientData } from '../types/budget';
 import { validateClient } from '../utils/validateClient';
 
 const VALID_CLIENT: ClientData = {
-  fullName: 'Mirelle Alemida
+  fullName: 'Mirelle Almeida',
   phone: '111 111 111',
   email: 'mirelle@gmail.com',
 };
