@@ -1,0 +1,65 @@
+{
+  "header": { "brand": "Frontender.itacademy" },
+  "hero": { "title": "Aconsegueix la millor qualitat" },
+  "services": { "add": "Afegir" },
+  "web": {
+    "pagesLabel": "Número de pàgines:",
+    "languagesLabel": "Número de llenguatges:",
+    "infoButton": "Més informació sobre",
+    "info": {
+      "pages": {
+        "title": "Número de pàgines",
+        "description": "Afegeix les pàgines que tindrà el teu projecte.",
+        "costLabel": "El cost de cada pàgina és de"
+      },
+      "languages": {
+        "title": "Número de llenguatges",
+        "description": "Afegeix els llenguatges que tindrà el teu projecte.",
+        "costLabel": "El cost de cada llenguatge és de"
+      }
+    }
+  },
+  "stepper": { "decrease": "Reduir", "increase": "Augmentar" },
+  "total": { "label": "Preu pressupostat:", "currencyName": "euros" },
+  "form": {
+    "title": "Demanar pressupost",
+    "fields": {
+      "fullName": { "label": "Nom", "placeholder": "Nom" },
+      "phone": { "label": "Telèfon", "placeholder": "Telèfon" },
+      "email": { "label": "Email", "placeholder": "Email" }
+    },
+    "submit": "Sol·licitar pressupost",
+    "errors": {
+      "fullName": "Escriu el teu nom complet (mínim 2 lletres).",
+      "phone": "Escriu un telèfon vàlid, per exemple 666 666 666.",
+      "email": "Escriu un email vàlid, per exemple nom@domini.com.",
+      "services": "Selecciona almenys un servei abans de sol·licitar el pressupost."
+    },
+    "success": "Sol·licitud enviada! Hem rebut les teves dades.",
+    "saveError": "No s'ha pogut desar el pressupost. Torna-ho a provar."
+  },
+  "summary": {
+    "title": "Pressupost",
+    "services": "Serveis contractats:",
+    "pages": "pàgines",
+    "languages": "llenguatges",
+    "basePrice": "Preu base",
+    "customization": "personalització",
+    "total": "Total:"
+  },
+  "history": {
+  "title": "Pressupostos en curs:",
+  "searchLabel": "Cercar per nom",
+  "searchPlaceholder": "Cercar per nom",
+  "sortLabel": "Ordenar per",
+  "sort": { "date": "Data", "amount": "Import", "name": "Nom" },
+  "empty": "Encara no hi ha cap pressupost.",
+  "noResults": "No s'ha trobat cap pressupost amb aquest nom."
+}, 
+"detail": {
+  "title": "Detall del pressupost",
+  "notFoundTitle": "Pressupost no trobat",
+  "notFoundText": "No hem trobat cap pressupost amb aquest enllaç en aquest navegador.",
+  "backHome": "Tornar a l'inici"
+}
+}

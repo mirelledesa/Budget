@@ -1,0 +1,8 @@
+{
+  "services": [
+    { "id": "seo", "name": "Seo", "description": "Programació d'una web responsive completa", "price": 300 },
+    { "id": "ads", "name": "Ads", "description": "Programació d'una web responsive completa", "price": 400 },
+    { "id": "web", "name": "Web", "description": "Programació d'una web responsive completa", "price": 500, "configurable": true }
+  ],
+  "webConfig": { "costPerUnit": 30, "minPages": 1, "minLanguages": 1 }
+}
