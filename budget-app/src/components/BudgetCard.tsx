@@ -3,7 +3,8 @@ import texts from '../data/ca.json';
 import type { Budget } from '../types/budget';
 import { describeWeb } from '../utils/describeWeb';
 import { Price } from './Price';
-
+import { Link } from 'react-router-dom';
+import { getBudgetPath } from '../constants/routes';
 interface BudgetCardProps {
   budget: Budget;
 }
@@ -14,7 +15,14 @@ export const BudgetCard = ({ budget }: BudgetCardProps) => {
   return (
     <article className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-md md:flex-row md:items-start md:justify-between">
       <div>
-        <h3 className="text-lg font-bold">{client.fullName}</h3>
+        <h3 className="text-lg font-bold">
+           <Link
+      to={getBudgetPath(budget.id)}
+      className="rounded hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-strong"
+      >
+      {client.fullName}
+      </Link>
+        </h3>
         <p className="text-xs text-gray-600">{client.email}</p>
         <p className="text-xs text-gray-600">{client.phone}</p>
       </div>
