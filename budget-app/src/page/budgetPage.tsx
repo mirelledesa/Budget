@@ -8,6 +8,9 @@ import { CURRENCY_SYMBOL } from '../constants/money';
 import texts from '../data/ca.json';
 import { useBudgetCalculator } from '../hooks/useBudgetCalculator';
 import type { WebConfig } from '../types/budget';
+import { BudgetSummary } from '../components/BudgetSummary';
+import { saveBudget } from '../services/budgetStorage';
+import type { Budget, ClientData, WebConfig } from '../types/budget';
 
 export const BudgetPage = () => {
   const {
@@ -19,8 +22,20 @@ export const BudgetPage = () => {
     total,
     toggleService,
     changeWebConfig,
+    buildBudget,
   } = useBudgetCalculator();
+  const [createdBudget, setCreatedBudget] = useState<Budget | null>(null);
 
+const handleClientSubmit = (client: ClientData): boolean => {
+  const budget = buildBudget(client);
+  const wasSaved = saveBudget(budget);
+
+  if (wasSaved) {
+    setCreatedBudget(budget);
+  }
+
+  return wasSaved;
+};
   const [openInfo, setOpenInfo] = useState<keyof WebConfig | null>(null);
   const modalTexts = openInfo ? texts.web.info[openInfo] : null;
 
@@ -80,8 +95,15 @@ export const BudgetPage = () => {
         </div>
 
         <div className="mt-10">
-          <ClientForm hasSelectedServices={selectedServices.length > 0} />
+          <ClientForm hasSelectedServices={selectedServices.length > 0} 
+              onSubmit={handleClientSubmit}/>
         </div>
+        {createdBudget && (
+  <div className="mt-10">
+    <BudgetSummary budget={createdBudget} />
+   </div>
+    )}
+        
       </main>
 
       {modalTexts && (

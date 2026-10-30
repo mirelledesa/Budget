@@ -17,11 +17,16 @@ const FIELDS: FieldConfig[] = [
 
 interface ClientFormProps {
   hasSelectedServices: boolean;
+  onSubmit: (client: ClientData) => boolean;
 }
 
-export const ClientForm = ({ hasSelectedServices }: ClientFormProps) => {
-  const { values, errors, isSuccess, handleChange, handleSubmit } =
-    useClientForm(hasSelectedServices);
+export const ClientForm = ({ hasSelectedServices, onSubmit}: ClientFormProps) => {
+  const { { values, errors, status, handleChange, handleSubmit 
+
+   } = useClientForm({
+      hasSelectedServices,
+    onSubmit,
+     });
 
   return (
     <section aria-labelledby="client-form-title" className="rounded-2xl bg-white p-6 shadow-md">
@@ -61,11 +66,17 @@ export const ClientForm = ({ hasSelectedServices }: ClientFormProps) => {
         </p>
       )}
 
-      {isSuccess && (
-        <p role="status" className="mt-3 text-xs font-semibold text-brand-strong">
-          {texts.form.success}
-        </p>
-      )}
+      {status === 'success' && (
+  <p role="status" className="mt-3 text-xs font-semibold text-brand-strong">
+    {texts.form.success}
+  </p>
+)}
+
+{status === 'error' && (
+  <p role="alert" className="mt-3 text-xs font-semibold text-red-700">
+    {texts.form.saveError}
+  </p>
+    )}
     </section>
   );
 };
