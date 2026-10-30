@@ -46,5 +46,14 @@
     "basePrice": "Preu base",
     "customization": "personalització",
     "total": "Total:"
-  }
+  },
+  "history": {
+  "title": "Pressupostos en curs:",
+  "searchLabel": "Cercar per nom",
+  "searchPlaceholder": "Cercar per nom",
+  "sortLabel": "Ordenar per",
+  "sort": { "date": "Data", "amount": "Import", "name": "Nom" },
+  "empty": "Encara no hi ha cap pressupost.",
+  "noResults": "No s'ha trobat cap pressupost amb aquest nom."
+}
 }
