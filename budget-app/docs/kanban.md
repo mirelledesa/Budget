@@ -57,7 +57,6 @@
 ## Definition of Done
 - Acceptance criteria met
 - Unit test written (Gherkin scenario) and passing
-- No `any`, no magic numbers
 - Accessible by keyboard and with ARIA where needed
-- Responsive (mobile-first, at least 2 breakpoints)
+- Responsive (mobile-first)
 - Semantic commit and PR merged into `develop`
