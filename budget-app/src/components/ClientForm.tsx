@@ -21,7 +21,7 @@ interface ClientFormProps {
 }
 
 export const ClientForm = ({ hasSelectedServices, onSubmit}: ClientFormProps) => {
-  const { { values, errors, status, handleChange, handleSubmit 
+  const { values, errors, status, handleChange, handleSubmit 
 
    } = useClientForm({
       hasSelectedServices,

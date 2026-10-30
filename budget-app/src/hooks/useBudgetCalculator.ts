@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
-import { QUANTITY_STEP } from "../constants/money";
-import servicesData from "../data/services.json";
+import { useMemo, useState } from 'react';
+import { QUANTITY_STEP } from '../constants/money';
+import servicesData from '../data/services.json';
 import type {
   Budget,
   ClientData,
@@ -8,9 +8,10 @@ import type {
   ServicesConfig,
   StepDirection,
   WebConfig,
-} from "../types/budget";
-import { calculateTotal } from "../utils/calculateTotal";
+} from '../types/budget';
+import { calculateTotal } from '../utils/calculateTotal';
 import { createBudget } from '../utils/createBudget';
+
 const config = servicesData as ServicesConfig;
 
 const MIN_WEB_VALUES: WebConfig = {
@@ -35,20 +36,15 @@ export const useBudgetCalculator = () => {
     );
   };
 
-  const changeWebConfig = (
-    field: keyof WebConfig,
-    direction: StepDirection,
-  ) => {
-    const buildBudget = (client: ClientData): Budget =>
-    createBudget({ client, selectedServices, webConfig, config });
+  const changeWebConfig = (field: keyof WebConfig, direction: StepDirection) => {
     setWebConfig((previous) => ({
       ...previous,
-      [field]: Math.max(
-        MIN_WEB_VALUES[field],
-        previous[field] + direction * QUANTITY_STEP,
-      ),
+      [field]: Math.max(MIN_WEB_VALUES[field], previous[field] + direction * QUANTITY_STEP),
     }));
   };
+
+  const buildBudget = (client: ClientData): Budget =>
+    createBudget({ client, selectedServices, webConfig, config });
 
   return {
     services: config.services,
@@ -61,5 +57,4 @@ export const useBudgetCalculator = () => {
     changeWebConfig,
     buildBudget,
   };
-
 };
