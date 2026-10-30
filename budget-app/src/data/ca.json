@@ -55,5 +55,11 @@
   "sort": { "date": "Data", "amount": "Import", "name": "Nom" },
   "empty": "Encara no hi ha cap pressupost.",
   "noResults": "No s'ha trobat cap pressupost amb aquest nom."
+}, 
+"detail": {
+  "title": "Detall del pressupost",
+  "notFoundTitle": "Pressupost no trobat",
+  "notFoundText": "No hem trobat cap pressupost amb aquest enllaç en aquest navegador.",
+  "backHome": "Tornar a l'inici"
 }
 }

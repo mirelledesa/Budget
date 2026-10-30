@@ -19,3 +19,5 @@ export const saveBudget = (budget: Budget): boolean => {
     return false;
   }
 };
+export const findBudgetById = (id: string): Budget | undefined =>
+    loadBudgets().find((budget) => budget.id === id);
