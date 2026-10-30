@@ -2,13 +2,15 @@ import { useMemo, useState } from "react";
 import { QUANTITY_STEP } from "../constants/money";
 import servicesData from "../data/services.json";
 import type {
+  Budget,
+  ClientData,
   ServiceId,
   ServicesConfig,
   StepDirection,
   WebConfig,
 } from "../types/budget";
 import { calculateTotal } from "../utils/calculateTotal";
-
+import { createBudget } from '../utils/createBudget';
 const config = servicesData as ServicesConfig;
 
 const MIN_WEB_VALUES: WebConfig = {
@@ -37,6 +39,8 @@ export const useBudgetCalculator = () => {
     field: keyof WebConfig,
     direction: StepDirection,
   ) => {
+    const buildBudget = (client: ClientData): Budget =>
+    createBudget({ client, selectedServices, webConfig, config });
     setWebConfig((previous) => ({
       ...previous,
       [field]: Math.max(
@@ -55,6 +59,7 @@ export const useBudgetCalculator = () => {
     total,
     toggleService,
     changeWebConfig,
+    buildBudget,
   };
 
 };
