@@ -22,6 +22,18 @@
   "stepper": { "decrease": "Reduir", "increase": "Augmentar" },
   "total": { "label": "Preu pressupostat:", "currencyName": "euros" },
   "form": {
+     "success": "Sol·licitud enviada! Hem rebut les teves dades.",
+     "saveError": "No s'ha pogut desar el pressupost. Torna-ho a provar."
+},
+  "summary": {
+  "title": "Pressupost",
+  "services": "Serveis contractats:",
+  "pages": "pàgines",
+  "languages": "llenguatges",
+  "basePrice": "Preu base",
+  "customization": "personalització",
+  "total": "Total:"
+},
     "title": "Demanar pressupost",
     "fields": {
       "fullName": { "label": "Nom", "placeholder": "Nom" },
@@ -37,4 +49,3 @@
     },
     "success": "Sol·licitud enviada! Hem rebut les teves dades."
   }
-}
