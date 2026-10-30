@@ -1,32 +1,84 @@
-# React + TypeScript + Vite
+Budget App · Frontender.itacademy
+A single-page web app to build and share instant quotes for digital services (SEO, Ads and Web).
+The client picks services, customizes the Web service, enters contact details and gets an itemized
+quote with its own unique URL. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+(./assets/captura -1.png)
+Preview
+![Budget App preview](docs/preview.png)
 
-Currently, two official plugins are available:
+Features
+Feature	Description
+Dynamic total	Select SEO, Ads and/or Web and see the total update instantly.
+Web configurator	Pages and languages: (pages + languages) × 30 € + 500 €.
+Client form	Name, phone and email with validation and clear error messages.
+Quote creation	Unique ID, date, itemized costs and total in a single view.
+History	List of saved quotes with search by name and sorting by date, amount or name.
+Unique URL	Every quote has its own page at /budget/:id.
+Tech stack
+React 19 + TypeScript (strict, no any)
+Tailwind CSS (mobile-first, md: breakpoint)
+React Router
+Zod (form validation)
+Vitest + Testing Library (unit tests written as Gherkin scenarios)
+Data and texts configurable via JSON (src/data)
+Persistence: localStorage (MVP)
+Getting started
+Requirements: Node.js 22 or later.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+git clone https://github.com/mirelledesa/Budget.git
+cd Budget/budget-app
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the address shown in the terminal (usually http://localhost:5173).
+
+Scripts
+Command	What it does
+npm run dev	Starts the development server.
+npm run build	Type-checks and builds for production.
+npm run test -- --run	Runs the unit tests once.
+npm run test:coverage	Runs the tests and prints the coverage report.
+How to use
+Tick one or more services. The total updates as you go.
+If you tick Web, set the number of pages and languages. The ⓘ button explains the cost.
+Fill in name, phone and email, then press Sol·licitar pressupost.
+The quote appears below the form, and it is saved in the history.
+In Pressupostos en curs you can search by name, sort by date, amount or name, and click a name to open the quote page.
+Copy the address of the quote page to share it.
+Project structure
+```
+budget-app/src
+├── components/ presentational UI
+├── constants/ named constants (no magic numbers)
+├── data/ services.json and ca.json (all texts)
+├── hooks/ state and logic (custom hooks)
+├── pages/ route-level views
+├── services/ data access (localStorage)
+├── test/ unit tests (Gherkin scenarios)
+├── types/ TypeScript interfaces
+└── utils/ pure functions (calculation, validation, lists)
+```
+
+Documentation
+Planning artifacts live in [docs/](docs): backlog with user stories, Kanban board, user flow,
+user journey, calculation logic, architecture, data model, UX/UI improvements and the demo script.
+
+Git workflow
+Git Flow: one feature/* branch per feature, merged into develop through Pull Requests after
+validation, and develop merged into main for the release. Commits follow semantic messages
+(feat:, fix:, refactor:, test:, docs:, chore:).
+
+Accessibility
+Semantic HTML and landmarks, labelled form fields, live regions for feedback (role="status" and
+role="alert"), keyboard navigation with visible focus, a native <dialog> modal, text contrast
+checked against WCAG, and touch targets of at least 24px.
+
+Known limitations
+Quotes are stored in the browser (localStorage), so a quote link opens only in the browser where
+it was created. A backend would remove this limit. PDF export is out of scope for this MVP.
+
+Author
+Mirelle · @mirelledesa · IT Academy Barcelona Activa
