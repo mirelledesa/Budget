@@ -35,6 +35,16 @@
       "email": "Escriu un email vàlid, per exemple nom@domini.com.",
       "services": "Selecciona almenys un servei abans de sol·licitar el pressupost."
     },
-    "success": "Sol·licitud enviada! Hem rebut les teves dades."
+    "success": "Sol·licitud enviada! Hem rebut les teves dades.",
+    "saveError": "No s'ha pogut desar el pressupost. Torna-ho a provar."
+  },
+  "summary": {
+    "title": "Pressupost",
+    "services": "Serveis contractats:",
+    "pages": "pàgines",
+    "languages": "llenguatges",
+    "basePrice": "Preu base",
+    "customization": "personalització",
+    "total": "Total:"
   }
 }
