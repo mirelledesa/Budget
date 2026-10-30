@@ -15,7 +15,7 @@ No meetings. No back-and-forth. Just the number you need.
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
-<img src="assets/captura - 1.png" alt="Budget App home page on desktop" width="760">
+<img src="./src/assets/captura - 1.png" alt="Budget App home page on desktop" width="760">
 
 </div>
 
@@ -33,9 +33,9 @@ an interactive experience:
 
 ## Screenshots
 
-| Main screen | Quote | Quote detail |
-|:---:|:---:|:---:|
-| <img src="./src/assets/captura - 1.png" alt="History of generated quotes" width="260"> | <img src="./src/assets/Captura - 3.png" alt="Detailed quote page" width="260"> | <img src="./src/assets/Captura - 4.png" alt="Home page on a phone" width="160"> |
+| Quote | Quote detail |
+|:---:|:---:
+| <img src="./src/assets/Captura - 3.png" alt="data quote" width="260"> | <img src="./src/assets/Captura - 4.png" alt="Detailed quote page" width="160"> |
 
 ## Features
 
@@ -79,7 +79,6 @@ Requirements: Node.js 22 or later.
 
 ```bash
 git clone https://github.com/mirelledesa/Budget.git
-cd Budget/budget-app
 npm install
 npm run dev
 ```
@@ -120,8 +119,6 @@ budget-app/src
 | [User flow](docs/user-flow.md) and [journey](docs/user-journey.md) | How people move through the app |
 | [Calculation logic](docs/calculation-logic.md) | How the total is computed |
 | [Architecture](docs/architecture.md) | Layers, folders, routes and stack |
-| [UX/UI improvements](docs/ux-improvements.md) | What was added and what is next |
-| [Demo script](docs/demo-script.md) | A 5-minute presentation outline |
 
 ## Workflow
 
