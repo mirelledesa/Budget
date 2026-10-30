@@ -47,9 +47,7 @@ export const BudgetPage = () => {
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 pb-16">
-      <header className="py-6 text-sm font-bold">{texts.header.brand}</header>
-
+      <>
       <main>
         <section
           aria-labelledby="hero-title"
@@ -124,7 +122,7 @@ export const BudgetPage = () => {
           onSortChange={history.setSortKey}
         />
       </main>
-
+       //
       {modalTexts && (
         <InfoModal title={modalTexts.title} onClose={() => setOpenInfo(null)}>
           <p>{modalTexts.description}</p>
@@ -134,6 +132,6 @@ export const BudgetPage = () => {
           </p>
         </InfoModal>
       )}
-    </div>
+   //</> 
   );
 };
