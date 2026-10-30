@@ -35,7 +35,7 @@ an interactive experience:
 
 | Quote | Quote detail |
 |:---:|:---:
-| <img src="./src/assets/Captura - 3.png" alt="data quote" width="260"> | <img src="./src/assets/Captura - 4.png" alt="Detailed quote page" width="160"> |
+| <img src="./src/assets/captura - 3.png" alt="data quote" width="250"> | <img src="./src/assets/Captura - 4.png" alt="Detailed quote page" width="250"> |
 
 ## Features
 
