@@ -1,16 +1,17 @@
-import { useState } from 'react';
-import { BudgetSummary } from '../components/BudgetSummary';
-import { ClientForm } from '../components/ClientForm';
-import { InfoModal } from '../components/InfoModal';
-import { Price } from '../components/Price';
-import { ServiceCard } from '../components/ServiceCard';
-import { Stepper } from '../components/Stepper';
-import { CURRENCY_SYMBOL } from '../constants/money';
-import texts from '../data/ca.json';
-import { useBudgetCalculator } from '../hooks/useBudgetCalculator';
-import { saveBudget } from '../services/budgetStorage';
-import type { Budget, ClientData, WebConfig } from '../types/budget';
-
+import { useState } from "react";
+import { BudgetSummary } from "../components/BudgetSummary";
+import { ClientForm } from "../components/ClientForm";
+import { InfoModal } from "../components/InfoModal";
+import { Price } from "../components/Price";
+import { ServiceCard } from "../components/ServiceCard";
+import { Stepper } from "../components/Stepper";
+import { CURRENCY_SYMBOL } from "../constants/money";
+import texts from "../data/ca.json";
+import { useBudgetCalculator } from "../hooks/useBudgetCalculator";
+import { saveBudget } from "../services/budgetStorage";
+import type { Budget, ClientData, WebConfig } from "../types/budget";
+import { BudgetHistory } from "../components/BudgetHistory";
+import { useBudgetHistory } from "../hooks/useBudgetHistory";
 export const BudgetPage = () => {
   const {
     services,
@@ -23,7 +24,7 @@ export const BudgetPage = () => {
     changeWebConfig,
     buildBudget,
   } = useBudgetCalculator();
-
+  const history = useBudgetHistory();
   const [openInfo, setOpenInfo] = useState<keyof WebConfig | null>(null);
   const [createdBudget, setCreatedBudget] = useState<Budget | null>(null);
   const modalTexts = openInfo ? texts.web.info[openInfo] : null;
@@ -39,6 +40,7 @@ export const BudgetPage = () => {
 
     if (wasSaved) {
       setCreatedBudget(budget);
+      history.refresh();
     }
 
     return wasSaved;
@@ -72,15 +74,19 @@ export const BudgetPage = () => {
                       label={texts.web.pagesLabel}
                       value={webConfig.pages}
                       min={minValues.pages}
-                      onChange={(direction) => changeWebConfig('pages', direction)}
-                      info={buildInfo('pages')}
+                      onChange={(direction) =>
+                        changeWebConfig("pages", direction)
+                      }
+                      info={buildInfo("pages")}
                     />
                     <Stepper
                       label={texts.web.languagesLabel}
                       value={webConfig.languages}
                       min={minValues.languages}
-                      onChange={(direction) => changeWebConfig('languages', direction)}
-                      info={buildInfo('languages')}
+                      onChange={(direction) =>
+                        changeWebConfig("languages", direction)
+                      }
+                      info={buildInfo("languages")}
                     />
                   </>
                 )}
@@ -89,7 +95,10 @@ export const BudgetPage = () => {
           ))}
         </ul>
 
-        <div role="status" className="mt-8 flex items-baseline justify-end gap-6">
+        <div
+          role="status"
+          className="mt-8 flex items-baseline justify-end gap-6"
+        >
           <span className="text-lg font-bold">{texts.total.label}</span>
           <Price amount={total} size="lg" />
         </div>
@@ -106,13 +115,22 @@ export const BudgetPage = () => {
             <BudgetSummary budget={createdBudget} />
           </div>
         )}
+        <BudgetHistory
+          budgets={history.visibleBudgets}
+          hasBudgets={history.hasBudgets}
+          query={history.query}
+          sortKey={history.sortKey}
+          onQueryChange={history.setQuery}
+          onSortChange={history.setSortKey}
+        />
       </main>
 
       {modalTexts && (
         <InfoModal title={modalTexts.title} onClose={() => setOpenInfo(null)}>
           <p>{modalTexts.description}</p>
           <p>
-            {modalTexts.costLabel} {costPerUnit}{CURRENCY_SYMBOL}
+            {modalTexts.costLabel} {costPerUnit}
+            {CURRENCY_SYMBOL}
           </p>
         </InfoModal>
       )}
