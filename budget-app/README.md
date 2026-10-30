@@ -33,9 +33,9 @@ an interactive experience:
 
 ## Screenshots
 
-| Quote history | Quote detail | On mobile |
+| Main screen | Quote | Quote detail |
 |:---:|:---:|:---:|
-| <img src="docs/images/history.png" alt="History of generated quotes" width="260"> | <img src="docs/images/quote-detail.png" alt="Detailed quote page" width="260"> | <img src="docs/images/home-mobile.png" alt="Home page on a phone" width="160"> |
+| <img src="./src/assets/captura - 1.png" alt="History of generated quotes" width="260"> | <img src="./src/assets/Captura - 3.png" alt="Detailed quote page" width="260"> | <img src="./src/assets/Captura - 4.png" alt="Home page on a phone" width="160"> |
 
 ## Features
 
@@ -127,7 +127,7 @@ budget-app/src
 
 Git Flow: one `feature/*` branch per feature, merged into `develop` through Pull Requests after
 validation, and `develop` merged into `main` for the release. Commits follow semantic messages
-(`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`).
+(`feat:`, `fix:`, `chore:`).
 
 ## Good to know, and what is next
 
